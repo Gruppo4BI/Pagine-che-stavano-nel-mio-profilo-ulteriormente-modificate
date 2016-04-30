@@ -28,7 +28,7 @@ $sitoweb=$_REQUEST['sitoweb'];
 $parlaci=$_REQUEST['parlaci'];
 $citta=$_REQUEST['citta'];
 //qui aggiungo gli escape alla domanda per evitare errori
-$domanda=mysql_escape_string($parlaci);
+
 
 
 //aggiungo nella tabella utenti
@@ -39,7 +39,7 @@ echo "LA query: ".$query."         <br/> ";
 $result = $mysqli->query($query);
 if($result===false){
 	$mysqli->close();
-	header("Location: REGISTRAZIONE2.php?errore=1");//email gi‡ esistente
+	header("Location: REGISTRAZIONE2.php?errore=1");//email gi√† esistente
 	exit;
 }
 $query="SELECT ID FROM utenti WHERE tipo='azienda' AND EMAIL='".$email."'";
